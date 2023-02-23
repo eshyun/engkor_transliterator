@@ -14,15 +14,21 @@ from keras.models import Model
 from keras.layers import Input, LSTM, GRU, Dense, Embedding, \
                          Bidirectional, RepeatVector, Concatenate, Activation, Dot, Lambda
 from keras.preprocessing.text import Tokenizer
-from keras.preprocessing.sequence import pad_sequences
-import keras.backend as K
+# from keras.preprocessing.sequence import pad_sequences
+from tensorflow.keras.preprocessing.sequence import pad_sequences
+# import keras.backend as K
+import tensorflow.keras.backend as K
+
 from keras.callbacks import EarlyStopping
 from keras.models import model_from_json
 
 import numpy as np
 import matplotlib.pyplot as plt
 
-if len(K.tensorflow_backend._get_available_gpus()) > 0:
+import tensorflow as tf
+
+# if len(K.tensorflow_backend._get_available_gpus()) > 0:
+if len(tf.config.list_physical_devices('GPU')) > 0:
     from keras.layers import CuDNNLSTM as LSTM
     from keras.layers import CuDNNGRU as GRU
 
