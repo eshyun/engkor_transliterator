@@ -282,7 +282,7 @@ class Transliterator(object):
         #######################################################
         ### DESIGN MODEL FOR TRAINING
         #######################################################
-        print('> Desgin Model for Training')
+        print('> Design Model for Training')
         ###########
         ### Encoder
         embedding_layer = Embedding(
